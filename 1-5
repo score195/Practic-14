@@ -1,0 +1,199 @@
+(ЗАДАНИЕ 1)
+{
+    public class Drum : Instrument
+    {
+        public override void Play()
+        {
+            Console.WriteLine("бам!");
+        }
+    }
+}
+{
+    public class Guitar : Instrument
+    {
+        public override void Play()
+        {
+            Console.WriteLine("бриньк!");
+        }
+    }
+}
+ public class Instrument
+ {
+      public virtual void Play()
+     {
+         Console.WriteLine("Играет музыка...");
+     }
+ }
+{
+    class Programm
+    {
+        static void Main(string[] args)
+        {
+            Instrument[] band = { new Guitar(), new Drum(), new Instrument() };
+            foreach (var instrument in band)
+            {
+                instrument.Play();
+            }
+        }
+    }
+}
+________________________________________________________________________________________
+(ЗАДАНИЕ 2)
+{
+    public class Message
+    {
+         public virtual void Send()
+        {
+            Console.WriteLine("Сообщение отправлено");
+        }
+    }
+}
+{
+    public class Email : Message
+    {
+        public override void Send()
+        {
+            Console.WriteLine("Email отправлен");
+        }
+    }
+{
+    public class SMS : Message
+    {
+        public override void Send()
+        {
+            Console.WriteLine("SMS отправлено");
+        }
+    }
+}
+{
+    class Programm
+    {
+        static void Main(string[] args)
+        {
+            Message[] messages = { new Email(), new SMS(), new Message() };
+            foreach (var message in messages)
+            {
+                message.Send();
+            }
+        }
+    }
+}
+________________________________________________________________________________________
+(ЗАДАНИЕ 3)
+{
+    public class Burger : Food
+    {
+        public override void Eat()
+        {
+            Console.WriteLine("кушаем бургер");
+        }
+    }
+}
+{
+    public class Pizza : Food
+    {
+        public override void Eat()
+        {
+            Console.WriteLine("кушаем пиццу");
+        }
+    }
+}
+{
+    public class Food
+    {
+         public virtual void Eat()
+        {
+            Console.WriteLine("кушаем ...");
+        }
+    }
+}
+class Programm
+ {
+     static void Main(string[] args)
+     {
+         Food[] foods = { new Pizza(), new Burger(), new Food() };
+         foreach (var food in foods)
+         {
+             food.Eat();
+         }
+     }
+ }
+_____________________________________________________________________________
+(ЗАДАНИЕ 4)
+{
+    class Triangle : Shape
+    {
+        public override string Draw() => "черчу треугольник";
+    }
+}
+{
+    class Circle : Shape
+    {
+        public override string Draw() => "рисую круг";
+        
+        
+    }
+}
+{
+    abstract class Shape
+    {
+        public abstract string Draw();
+    }
+}
+{
+    class Programm
+    {
+        static void Main(string[] args)
+        {
+            Shape[] shapes = { new Circle(), new Triangle() };
+            foreach (var shape in shapes)
+            {
+                Console.WriteLine(shape.Draw());
+            }
+        }
+    }
+}
+__________________________________________________________________________________________
+(ЗАДАНИЕ 5)
+{
+    public class Archer : Player
+    {
+        public override void Attack()
+        {
+            Console.WriteLine("стреляю из лука");
+        }
+    }
+}
+{
+    public class Warrior : Player
+    {
+        public override void Attack()
+        {
+            Console.WriteLine("рублю мечом");
+        }
+        
+        
+    }
+}
+{
+    public class Player
+    {
+        public virtual void Attack()
+        {
+            Console.WriteLine("атакую!");
+        }
+    }
+}
+{
+    class Programm
+    {
+        static void Main(string[] args)
+        {
+            Player[] players = { new Warrior(), new Archer(), new Player() };
+            foreach (var player in players)
+            {
+                player.Attack();
+            }
+        }
+    }
+}
